@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-// Make sure this matches your live backend URL exactly
+// ENSURE THIS IS YOUR LIVE RENDER URL
 const API_URL = 'https://br-fresh-extracts-api.onrender.com/api/';
 
 const api = axios.create({
@@ -22,7 +22,7 @@ api.interceptors.response.use(
   (response) => response,
   async (error) => {
     const originalRequest = error.config;
-    if (error.response.status === 401 && !originalRequest._retry) {
+    if (error.response?.status === 401 && !originalRequest._retry) {
       originalRequest._retry = true;
       const refreshToken = localStorage.getItem('refreshToken');
       if (refreshToken) {
