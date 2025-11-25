@@ -28,6 +28,10 @@ const Navbar = ({ onCartClick, onLogout, cartCount }) => {
               <UserIcon />
               <span className="ml-2 hidden sm:block">My Orders</span>
             </Link>
+            {/* NEW: Change Password Link */}
+            <Link to="/change-password" className="text-sm font-medium text-gray-600 hover:text-green-600 hidden sm:block">
+              Password
+            </Link>
 
             {/* Cart Icon */}
             <button onClick={onCartClick} className="relative rounded-full p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100">
@@ -44,7 +48,6 @@ const Navbar = ({ onCartClick, onLogout, cartCount }) => {
             <button onClick={onLogout} className="text-sm font-medium text-gray-600 hover:text-green-600 hidden sm:block">
               Sign Out
             </button>
-
           </div>
         </div>
       </nav>
