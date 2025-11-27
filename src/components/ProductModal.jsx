@@ -33,7 +33,7 @@ const ProductModal = ({ product, isOpen, onClose, onAddToCart }) => {
         {/* Modal Content */}
         <div className="flex-1 overflow-y-auto p-6">
           <img 
-            src={product.image_url || 'https://via.placeholder.com/600'} 
+            src={getOptimizedImageUrl(product.image, 800)} 
             alt={product.name} 
             className="w-full h-64 rounded-lg object-cover mb-4"
           />
