@@ -1,6 +1,6 @@
 // src/components/ProductModal.jsx
 import React from 'react';
-
+import { getOptimizedImageUrl } from '../utils/imageUtils';
 // Close Icon
 const CloseIcon = () => <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>;
 
@@ -33,9 +33,9 @@ const ProductModal = ({ product, isOpen, onClose, onAddToCart }) => {
         {/* Modal Content */}
         <div className="flex-1 overflow-y-auto p-6">
           <img 
-            src={getOptimizedImageUrl(product.image, 800)} 
+            src={getOptimizedImageUrl(product.image_url, 800)} 
             alt={product.name} 
-            className="w-full h-64 rounded-lg object-cover mb-4"
+            className="w-full h-64 rounded-lg object-contain mb-4 bg-gray-50"
           />
           <h3 className="text-3xl font-bold text-gray-900">{product.name}</h3>
           <p className="text-sm text-gray-500 mt-1 mb-3">{product.category_name}</p>

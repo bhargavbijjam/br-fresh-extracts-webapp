@@ -39,7 +39,7 @@ const StorePage = () => {
 
         setProducts(prodRes.data.map(p => ({
           id: p.id, name: p.name, description: p.description,
-          price: p.price, image_url: p.image_url, category_name: p.category,
+          price: p.price, image_url: p.image, category_name: p.category,
         })));
 
         const addr = profRes.data.address;
